@@ -298,7 +298,7 @@ class App(QWidget):
         mdict['image_info'][0][0] = ndarray((1,1), dtype=[('location', 'O'), ('number', 'O')])
         mdict['image_info'][0][0][0][0][1] = ndarray((1,1),  dtype=uint8)
         for image_path, points in self.current_annotation.items():
-            mat_file_name = os.path.basename(image_path)
+            mat_file_name = os.path.basename(image_path) + ".mat"
             mat_file_path = os.path.join(self.save_dir, mat_file_name)
             point_array = []
             for point in points.keys():
